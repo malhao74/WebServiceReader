@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 
-namespace WebServiceReader.Models
+namespace WebServiceReader
 {
-    public class DataLayer
+    /// <summary>
+    /// Fetch a quote from the QuoteWebService
+    /// </summary>
+    public static class DataLayer
     {
         public static QuoteModel Get()
         {
@@ -16,13 +19,17 @@ namespace WebServiceReader.Models
             try
             {
                 // Call the web service 
-                quoteJson = quoteWebServiceClient.GetQuote();
-                quoteWebServiceClient.Close();
+                quoteJson = quoteWebServiceClient.RandomQuote();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //throw new HttpException("The web service is not working...");
+                Console.WriteLine(ex.Message);
                 return null;
+            }
+            finally
+            {
+                quoteWebServiceClient.Close();
             }
 
             // Deserialize the json string returned by the web service

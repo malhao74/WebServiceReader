@@ -6,22 +6,22 @@
       <xsd:import schemaLocation="http://localhost:56204/QuoteWebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IQuoteWebService_GetQuote_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetQuote" />
+  <wsdl:message name="IQuoteWebService_RandomQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:RandomQuote" />
   </wsdl:message>
-  <wsdl:message name="IQuoteWebService_GetQuote_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetQuoteResponse" />
+  <wsdl:message name="IQuoteWebService_RandomQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RandomQuoteResponse" />
   </wsdl:message>
   <wsdl:portType name="IQuoteWebService">
-    <wsdl:operation name="GetQuote">
-      <wsdl:input wsaw:Action="http://tempuri.org/IQuoteWebService/GetQuote" message="tns:IQuoteWebService_GetQuote_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IQuoteWebService/GetQuoteResponse" message="tns:IQuoteWebService_GetQuote_OutputMessage" />
+    <wsdl:operation name="RandomQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuoteWebService/RandomQuote" message="tns:IQuoteWebService_RandomQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuoteWebService/RandomQuoteResponse" message="tns:IQuoteWebService_RandomQuote_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IQuoteWebService" type="tns:IQuoteWebService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetQuote">
-      <soap:operation soapAction="http://tempuri.org/IQuoteWebService/GetQuote" style="document" />
+    <wsdl:operation name="RandomQuote">
+      <soap:operation soapAction="http://tempuri.org/IQuoteWebService/RandomQuote" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

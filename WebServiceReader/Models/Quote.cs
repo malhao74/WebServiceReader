@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebServiceReader.Models
+namespace WebServiceReader
 {
+    /// <summary>
+    /// Class to map the webservice information
+    /// </summary>
     public class QuoteModel
     {
         public string Quote { get; }

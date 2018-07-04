@@ -15,11 +15,11 @@ namespace WebServiceReader.QuoteWebService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="QuoteWebService.IQuoteWebService")]
     public interface IQuoteWebService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuoteWebService/GetQuote", ReplyAction="http://tempuri.org/IQuoteWebService/GetQuoteResponse")]
-        string GetQuote();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuoteWebService/RandomQuote", ReplyAction="http://tempuri.org/IQuoteWebService/RandomQuoteResponse")]
+        string RandomQuote();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuoteWebService/GetQuote", ReplyAction="http://tempuri.org/IQuoteWebService/GetQuoteResponse")]
-        System.Threading.Tasks.Task<string> GetQuoteAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuoteWebService/RandomQuote", ReplyAction="http://tempuri.org/IQuoteWebService/RandomQuoteResponse")]
+        System.Threading.Tasks.Task<string> RandomQuoteAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +49,12 @@ namespace WebServiceReader.QuoteWebService {
                 base(binding, remoteAddress) {
         }
         
-        public string GetQuote() {
-            return base.Channel.GetQuote();
+        public string RandomQuote() {
+            return base.Channel.RandomQuote();
         }
         
-        public System.Threading.Tasks.Task<string> GetQuoteAsync() {
-            return base.Channel.GetQuoteAsync();
+        public System.Threading.Tasks.Task<string> RandomQuoteAsync() {
+            return base.Channel.RandomQuoteAsync();
         }
     }
 }

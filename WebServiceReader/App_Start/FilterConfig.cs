@@ -3,10 +3,14 @@ using System.Web.Mvc;
 
 namespace WebServiceReader
 {
-    public class FilterConfig
+    public static class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            if (filters == null)
+            {
+                return;
+            }
             filters.Add(new HandleErrorAttribute());
         }
     }
